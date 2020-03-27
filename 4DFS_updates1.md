@@ -8,7 +8,7 @@ I want to keep you updated with my 4D foot scanner project, so I will be sending
 
 ## Roadmap
 
-![](/home/jure/TUD/Thesis/Notes/roadmap_cropped.png)
+![](updates1_res/roadmap_cropped.png)
 
 Project status. Planned timeline is in blue, actual progress is in green.
 
@@ -93,7 +93,7 @@ Another thing I looked into is USB protocol and its capacity. This [whitepaper](
 
 
 
-![](/home/jure/TUD/Thesis/Notes/USBtests.png)
+![](updates1_res/USBtests.png)
 
 *USB bandwidth requirements example, from the mentioned [whitepaper](https://dev.intelrealsense.com/docs/multiple-depth-cameras-configuration)* 
 
@@ -105,7 +105,7 @@ In the last week I shifted my focus from papers and theory more torwards hands-o
 
 
 
-![RealSenseViewer](/home/jure/Documents/RealSenseViewer.png)
+![RealSenseViewer](updates1_res/RealSenseViewer.png)
 
 *Intel RealSense Viewer software*
 
@@ -119,7 +119,7 @@ Finally I was able to compile and run examples, both in **C++** and **Python**. 
 
 
 
-![](/home/jure/TUD/Thesis/Software_stuff/pyrealsense_hello/RealSense_screenshot_27.03.2020.png)
+![](updates1_res/python_realsense.png)
 
 *Images taken with a custom python script*
 

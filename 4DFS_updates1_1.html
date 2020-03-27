@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<link rel="stylesheet" href="github.css">
+<title>4DFS_updates1_backup</title></head>
+<body><h1>4DFS UPDATES @26.03</h1>
+<p>&nbsp;</p>
+<p>I want to keep you updated with my 4D foot scanner project, so I will be sending this kind of reports more regularly  (every two weeks approximately). Any kind of feedback is welcome.</p>
+<p>&nbsp;</p>
+<h2>Roadmap</h2>
+<p><img src="updates1_res/roadmap_cropped.png" referrerpolicy="no-referrer"></p>
+<p>Project status. Planned timeline is in blue, actual progress is in green.</p>
+<p>&nbsp;</p>
+<h2>Progress report</h2>
+<p>Since our first group meeting on 3rd of March, I was mostly focusing on three things: <em>papers</em>, <em>theory</em> and <em>tools</em>. In this &quot;groundwork&quot; phase of the project my goal is to learn basic concepts of 3D scanning and computer vision, gather relevant papers and resources and to familiarize myself with hardware (RealSense camera) and software (RealSense SDK, OpenCV, etc.).</p>
+<h3>Papers</h3>
+<p>In the beginning I was (trying to) read papers about 4D and 3D foot scanning specifically, but quickly realized that I need to start elsewhere in order to get an <strong>overview of the field</strong>. Aiming for breadth rather than depth, I want to highlight a few papers which will serve as a springboard for further research:</p>
+<ol start='' >
+<li><p><a href='https://www.sciencedirect.com/science/article/abs/pii/S014381660900075X' target='_blank'>Dynamic 3-D shape measurement method: A review</a></p>
+<p>Useful as an overiew of dynamic 3D methods, their categorization and use-cases, terminology and basic principles. However many use-cases presented in the paper are probably not to our scenario (such as membrane vibrations, high-speed rotating objects etc.).</p>
+</li>
+<li><p><a href='https://www.researchgate.net/publication/325488173_State_of_the_Art_on_3D_Reconstruction_with_RGB-D_Cameras' target='_blank'>State of the Art on 3D Reconstruction with RGB-D Cameras</a></p>
+<p>Probably <u>the most useful</u> and relevant paper at this point of time. Provides an overview of 3D scanning and reconstruction using RGB-D (color + depth) cameras, which is exactly what we are working with. I used this paper to create a &quot;study to-do&quot; list of all relevant computer vision topics and to find other relevant papers.</p>
+</li>
+<li><p><a href='https://ieeexplore.ieee.org/document/6361384/citations?tabFilter=patents' target='_blank'>Registration of 3D Point Clouds and Meshes: A Survey from Rigid to Nonrigid</a></p>
+<p>Since we are using the RealSense depth camera at the moment, data acquisition might not be the main concern. One of the challenges is precisely and automatically aligning point-clouds captured from multiple cameras. This paper provides an overview of relevant methods, which will be useful in the next phase of the project. More recent techniques should be explored as well (this paper is from 2013).</p>
+</li>
+<li><p><a href='http://openaccess.thecvf.com/content_cvpr_2017_workshops/w15/html/Keselman_Intel_RealSense_Stereoscopic_CVPR_2017_paper.html' target='_blank'>Intel® RealSense™ Stereoscopic Depth Cameras</a></p>
+<p>Overview of the RealSense RGBD camera systems, theory of operation and performance of the R200 family of cameras. Our camera is newer, but main principles of operation are the same.</p>
+</li>
+<li><p><a href='https://www.mdpi.com/1424-8220/19/3/489' target='_blank'>Metrological and Critical Characterization of the Intel D415 Stero Depth Camera</a></p>
+<p>One of the main questions we want to answer in the early phase is whether our RealSense D435 camera is appropriate for the task - is it accurate enough? Pointed to by prof. Wolf, this paper investigates accuracy of a very similar camera from the same RealSense family.</p>
+</li>
+<li><p><a href='https://www.sciencedirect.com/science/article/pii/S1268773118300857' target='_blank'>A state-of-the-art review of foot pressure</a></p>
+<p>Overview of foot pressure measuring techniques and tools. Will be useful in later phases of the project.</p>
+</li>
+
+</ol>
+<p>&nbsp;</p>
+<p>Before diving deeper into research I need to learn enough theoretical fundamentals to understand the papers above well, which is something I was working on recently.</p>
+<p>&nbsp;</p>
+
+
+
+
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Theory</h3>
+<p>I dedicated significant amount of time studying basic concepts of computer vision, 3D scanning and reconstruction. In order not to &quot;waste&quot; too much time on theory, I created a list of topics that were frequently discussed in the papers mentioned above:</p>
+<blockquote><p>triangulation, fringe projections, affine transformations, phase unwrapping, noise reduction, bilateral filters, RANSAC, ICP, signed distance fields, image rectification, epipolar geometry ...</p>
+</blockquote>
+<p>&nbsp;</p>
+<p>Some online courses and videos which I found useful:</p>
+<ul>
+<li><p><a href='https://www.youtube.com/playlist?list=PL4B3F8D4A5CAD8DA3'>William Hoff&#39;s Computer Vision course</a> </p>
+<p>Computer Vision theory explained with short videos (searchable by topic) in a &quot;human-friendly&quot; way.</p>
+</li>
+<li><p><a href='https://www.youtube.com/playlist?list=PLyH-5mHPFffFvCCZcbdWXAb_cTy4ZG3Dj'>Multiple View Geometry in CV by Sean Mullery</a></p>
+<p>Course dedicated for Autonomous Vehicle engineering students, concise overview of 3D imaging related concepts with very practical explanations.</p>
+</li>
+<li><p><a href='https://www.youtube.com/playlist?list=PLBvTHNwPbOAMWMVEAk5rvRoAIguPD7fmF'>Computer Vision for Visual Effects by Rich Radke</a></p>
+<p>Nice introduction to structured light scanning, 3D from stereo and registration. Simple explanation of Epipolar geometry and stereo correspondence.</p>
+</li>
+
+</ul>
+<p>&nbsp;</p>
+<p>I covered approximately half of the mentioned topics, but it is hard to quantify this as the reading list is an ever-growing living organism.</p>
+<p>Another thing I looked into is USB protocol and its capacity. This <a href='https://dev.intelrealsense.com/docs/multiple-depth-cameras-configuration'>whitepaper</a> presents experiments regarding USB bandwidth requirements of RealSense camera. In short, it will not be possible to use more than four cameras on single USB host controller interface. This indicates that we could take distributed computing solutions into consideration in the future.</p>
+<p>&nbsp;</p>
+<p><img src="updates1_res/USBtests.png" referrerpolicy="no-referrer"></p>
+<p><em>USB bandwidth requirements example, from the mentioned <a href='https://dev.intelrealsense.com/docs/multiple-depth-cameras-configuration'>whitepaper</a></em> </p>
+<p>&nbsp;</p>
+<h3>Tools</h3>
+<p>In the last week I shifted my focus from papers and theory more torwards hands-on experience. Biggest part of this was setting up the camera-related toolchains, reading documentation and getting familiar with relevant libraries (OpenCV) .</p>
+<p>&nbsp;</p>
+<p><img src="updates1_res/RealSenseViewer.png" referrerpolicy="no-referrer" alt="RealSenseViewer"></p>
+<p><em>Intel RealSense Viewer software</em></p>
+<p>&nbsp;</p>
+<p><strong>Installing the camera software</strong> seemed trivial at first and I could play with the RealSense Viewer software within minutes (image above). However, some other tools which could be useful (<a href='https://github.com/IntelRealSense/librealsense/tree/master/tools/depth-quality'>DepthQuality</a> tool, FirmwareUpgrade) did not work and I decided to spend some time (~2 days) on compiling and installing libraries properly. Maybe this could be avoided, but I was really interested in learning that and also it will be useful when porting the system to various embedded computers. The linux documentation project was helpful in learning about <a href='http://tldp.org/HOWTO/Program-Library-HOWTO/index.html'>program libraries</a>.</p>
+<p>Despite some documentation online, I found <a href='https://github.com/IntelRealSense/librealsense'>RealSense github</a> to be the best source of information (<a href='https://github.com/IntelRealSense/librealsense/tree/master/examples '>code examples</a>, <a href='https://github.com/IntelRealSense/librealsense/tree/master/doc '>documentation</a>, <a href='https://github.com/IntelRealSense/librealsense/tree/master/tools '>useful tools</a>). </p>
+<p>Finally I was able to compile and run examples, both in <strong>C++</strong> and <strong>Python</strong>. At this point, I managed to write a short code example for capturing and vizualizing both color and depth images.</p>
+<p>&nbsp;</p>
+<p><img src="updates1_res/python_realsense.png" referrerpolicy="no-referrer"></p>
+<p><em>Images taken with a custom python script</em></p>
+<p>&nbsp;</p>
+<h2>What&#39;s next?</h2>
+<p>My main objective now is determining the <strong>accuracy of the camera</strong>, so we can decide if it is appropriate for the project. This involves measuring its Field Of View, Z-accuracy, Plane-fit RMS error etc. </p>
+<p>I will be referencing to the <a href='https://www.mdpi.com/1424-8220/19/3/489/xml'>D415 characterization paper</a> and perform simplified measurements on our, D435 camera model. At the moment I am planning to use DepthQuality tool, but also custom python scripts to compare the results (and to understand measurements better).</p>
+<p>&nbsp;</p>
+<blockquote><p><strong>Note:</strong> since I have to take three exams in the coming exam period, I will now dedicate more time for studying, so I can focus on graduation project exclusively in the future. I suggest scheduling next meetings after the examination days are known and fixed.</p>
+</blockquote>
+<p>&nbsp;</p>
+</body>
+</html>

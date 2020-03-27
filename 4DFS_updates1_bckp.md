@@ -26,9 +26,11 @@ In the beginning I was (trying to) read papers about 4D and 3D foot scanning spe
 
    Useful as an overiew of dynamic 3D methods, their categorization and use-cases, terminology and basic principles. However many use-cases presented in the paper are probably not to our scenario (such as membrane vibrations, high-speed rotating objects etc.).
 
+   <div style="page-break-after: always; break-after: page;"></div>
+
 2. [State of the Art on 3D Reconstruction with RGB-D Cameras][2]
 
-   Probably <u>the most useful</u> and relevant paper at this point of time. Provides an overview of 3D scanning and reconstruction using RGB-D (color + depth) cameras, which is exactly what we are working with. I used this paper to create a "study to-do" list of all relevant computer vision topics and to find other relevant papers.
+   Probably <u>the most useful</u> and relevant paper at this point of time. Provides an overview of 3D scanning and reconstruction using RGB-D (color + depth) cameras, which is exatly what we are working with. I used this paper to create a "study to-do" list of all relevant computer vision topics and to find other relevant papers.
 
 3. [Registration of 3D Point Clouds and Meshes: A Survey from Rigid to Nonrigid][3]
 
@@ -61,7 +63,7 @@ Before diving deeper into research I need to learn enough theoretical fundamenta
 
 
 
-
+<div style="page-break-after: always; break-after: page;"></div>
 
 ### Theory
 
@@ -97,7 +99,7 @@ Another thing I looked into is USB protocol and its capacity. This [whitepaper](
 
 *USB bandwidth requirements example, from the mentioned [whitepaper](https://dev.intelrealsense.com/docs/multiple-depth-cameras-configuration)* 
 
-
+<div style="page-break-after: always; break-after: page;"></div>
 
 ### Tools
 
@@ -114,6 +116,8 @@ In the last week I shifted my focus from papers and theory more torwards hands-o
 **Installing the camera software** seemed trivial at first and I could play with the RealSense Viewer software within minutes (image above). However, some other tools which could be useful ([DepthQuality](https://github.com/IntelRealSense/librealsense/tree/master/tools/depth-quality) tool, FirmwareUpgrade) did not work and I decided to spend some time (~2 days) on compiling and installing libraries properly. Maybe this could be avoided, but I was really interested in learning that and also it will be useful when porting the system to various embedded computers. The linux documentation project was helpful in learning about [program libraries](http://tldp.org/HOWTO/Program-Library-HOWTO/index.html).
 
 Despite some documentation online, I found [RealSense github](https://github.com/IntelRealSense/librealsense) to be the best source of information ([code examples](https://github.com/IntelRealSense/librealsense/tree/master/examples ), [documentation](https://github.com/IntelRealSense/librealsense/tree/master/doc ), [useful tools](https://github.com/IntelRealSense/librealsense/tree/master/tools )). 
+
+<div style="page-break-after: always; break-after: page;"></div>
 
 Finally I was able to compile and run examples, both in **C++** and **Python**. At this point, I managed to write a short code example for capturing and vizualizing both color and depth images.
 

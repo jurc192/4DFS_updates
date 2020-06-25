@@ -21,6 +21,7 @@ Approximately one month ago (20.5), I presented my RealSense D435i accuracy meas
 
 Drawing those tangible conclusions is important for the project, since ROI (and FoV, not measured previously) + optimal distance will determine minimal **number of cameras** needed.
 
+<div style="page-break-after: always; break-after: page;"></div>
 
 ### Registration
 
@@ -84,6 +85,8 @@ Image 3,4 : original color images from two realsense cameras. misaligned mapping
 In the future, I want to **evaluate this technique** (answer the accuracy question) and relate what I am doing to scientific research. One of the papers I want to look into is this: [Robust Intrinsic and Extrinsic Calibration of RGB-D Cameras](https://ieeexplore.ieee.org/document/8423784) (**2018**, [implementation](http://iaslab-unipd.github.io/rgbd_calibration/) in ROS).
 
 
+
+<div style="page-break-after: always; break-after: page;"></div>
 
 ## What's next?
 

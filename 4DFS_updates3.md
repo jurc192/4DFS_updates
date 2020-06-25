@@ -2,7 +2,7 @@
 
 ## Roadmap
 
-![](/home/jure/TUD/Thesis/Reports/4DFS_updates/roadmaps/4DFS_roadmap_june.png)
+![](./updates3_res/4DFS_roadmap_june.png)
 
 ## Progress Report
 
